@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MushroomViewController: UIViewController {
+class EdibleShroomViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
