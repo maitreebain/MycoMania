@@ -23,6 +23,7 @@ class EdibleShroomViewController: UIViewController {
         
         loadMushroomData()
         edibleTableView.dataSource = self
+        edibleTableView.delegate = self
     }
     
     
@@ -40,8 +41,8 @@ class EdibleShroomViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.present(alert, animated: true, completion: nil)
                 }
-            case .success(let jokes):
-                dump(jokes)
+            case .success(let data):
+                dump(data)
             }
         }
     }
@@ -49,24 +50,26 @@ class EdibleShroomViewController: UIViewController {
 
 }
 
-extension  EdibleShroomViewController: UITableViewDataSource {
+
+extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mushroom.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell: EdibleCell!
-        
-        guard let edibleCell = tableView.dequeueReusableCell(withIdentifier: "edibleCell", for: indexPath) as? EdibleCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "edibleCell", for: indexPath) as? EdibleCell else {
             fatalError("check cell name")
         }
-        cell = edibleCell
         
         let selectedShroom = mushroom[indexPath.row]
         
         cell.configureCell(for: selectedShroom)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
     }
 }
