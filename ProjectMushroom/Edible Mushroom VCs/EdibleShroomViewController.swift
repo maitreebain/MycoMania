@@ -10,12 +10,22 @@ import UIKit
 
 class EdibleShroomViewController: UIViewController {
 
+    @IBOutlet weak var edibleTableView: UITableView!
+    
+    var mushroom = [MushroomDataLoad]() {
+        didSet {
+            edibleTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadMushroomData()
+        edibleTableView.dataSource = self
     }
-
+    
+    
     func loadMushroomData() {
         
         ShroomsAPIClient.fetchData { result in
@@ -39,3 +49,24 @@ class EdibleShroomViewController: UIViewController {
 
 }
 
+extension  EdibleShroomViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mushroom.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell: EdibleCell!
+        
+        guard let edibleCell = tableView.dequeueReusableCell(withIdentifier: "edibleCell", for: indexPath) as? EdibleCell else {
+            fatalError("check cell name")
+        }
+        cell = edibleCell
+        
+        let selectedShroom = mushroom[indexPath.row]
+        
+        cell.configureCell(for: selectedShroom)
+        
+        return cell
+    }
+}

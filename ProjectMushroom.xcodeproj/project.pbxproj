@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		80015482239B490C00CA4D51 /* MushroomDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80015481239B490C00CA4D51 /* MushroomDataLoad.swift */; };
 		80163EE6239B5F9C0088F444 /* ShroomAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80163EE5239B5F9C0088F444 /* ShroomAPIClient.swift */; };
+		80163EE8239B69280088F444 /* EdibleDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80163EE7239B69280088F444 /* EdibleDetailController.swift */; };
+		80163EEA239B6B230088F444 /* CustomShroomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80163EE9239B6B230088F444 /* CustomShroomCell.swift */; };
 		8040A440238DA5B7002637E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040A43F238DA5B7002637E9 /* AppDelegate.swift */; };
 		8040A442238DA5B7002637E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040A441238DA5B7002637E9 /* SceneDelegate.swift */; };
 		8040A444238DA5B7002637E9 /* EdibleShroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8040A443238DA5B7002637E9 /* EdibleShroomViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		80015481239B490C00CA4D51 /* MushroomDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomDataLoad.swift; sourceTree = "<group>"; };
 		80163EE5239B5F9C0088F444 /* ShroomAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShroomAPIClient.swift; sourceTree = "<group>"; };
+		80163EE7239B69280088F444 /* EdibleDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdibleDetailController.swift; sourceTree = "<group>"; };
+		80163EE9239B6B230088F444 /* CustomShroomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShroomCell.swift; sourceTree = "<group>"; };
 		8040A43C238DA5B7002637E9 /* ProjectMushroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectMushroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8040A43F238DA5B7002637E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8040A441238DA5B7002637E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				8040A443238DA5B7002637E9 /* EdibleShroomViewController.swift */,
+				80163EE7239B69280088F444 /* EdibleDetailController.swift */,
+				80163EE9239B6B230088F444 /* CustomShroomCell.swift */,
 			);
 			path = "Edible Mushroom VCs";
 			sourceTree = "<group>";
@@ -163,6 +169,8 @@
 				8040A444238DA5B7002637E9 /* EdibleShroomViewController.swift in Sources */,
 				80015482239B490C00CA4D51 /* MushroomDataLoad.swift in Sources */,
 				8040A440238DA5B7002637E9 /* AppDelegate.swift in Sources */,
+				80163EE8239B69280088F444 /* EdibleDetailController.swift in Sources */,
+				80163EEA239B6B230088F444 /* CustomShroomCell.swift in Sources */,
 				8040A442238DA5B7002637E9 /* SceneDelegate.swift in Sources */,
 				80163EE6239B5F9C0088F444 /* ShroomAPIClient.swift in Sources */,
 			);
