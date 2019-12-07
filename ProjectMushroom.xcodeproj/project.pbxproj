@@ -45,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				8001547F239B48F800CA4D51 /* MushroomData.json */,
+				80015481239B490C00CA4D51 /* MushroomDataLoad.swift */,
 			);
 			path = "Mushroom JSON data";
 			sourceTree = "<group>";
@@ -78,9 +79,8 @@
 			children = (
 				8040A43F238DA5B7002637E9 /* AppDelegate.swift */,
 				8040A441238DA5B7002637E9 /* SceneDelegate.swift */,
-				80015484239B493800CA4D51 /* Edible Mushroom VCs */,
 				8040A445238DA5B7002637E9 /* Main.storyboard */,
-				80015481239B490C00CA4D51 /* MushroomDataLoad.swift */,
+				80015484239B493800CA4D51 /* Edible Mushroom VCs */,
 				80015483239B491600CA4D51 /* Mushroom JSON data */,
 				8040A448238DA5BA002637E9 /* Assets.xcassets */,
 				8040A44A238DA5BA002637E9 /* LaunchScreen.storyboard */,
