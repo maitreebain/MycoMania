@@ -13,14 +13,15 @@ struct MushroomDataLoad: Decodable {
     let common: [String]
     let regions: [String]
     let habitat: String
-    let fairyring: Bool
+    let fairyRings: Bool
     let attributes: ShroomAttributes
 }
 
 
 struct ShroomAttributes: Decodable {
     let psychoactive: Bool
-    let poisionous: Bool
+    let poisonous: Bool
     let deadly: Bool
     let ecology: [String]
 }
+
