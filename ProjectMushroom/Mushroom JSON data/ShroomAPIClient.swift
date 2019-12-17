@@ -8,18 +8,9 @@
 
 import Foundation
 
-struct ShroomsAPIClient: Error {
+struct ShroomsAPIClient {
     
-    enum NetworkError: Error {
-        case badURL(String)
-        case networkClientError(Error)
-        case noResponse
-        case badStatus(Int)
-        case noData
-        case decodingError(Error)
-    }
-    
-    static func fetchData(completion: @escaping (Result<[MushroomDataLoad], NetworkError>) -> ()) {
+    static func fetchData(completion: @escaping (Result<[MushroomDataLoad], AppError>) -> ()) {
         let endPointString = "https://raw.githubusercontent.com/MyShroom/myshroom-api/master/public/mushrooms.json"
         
         guard let url = URL(string: endPointString) else {
@@ -27,40 +18,26 @@ struct ShroomsAPIClient: Error {
             return
         }
         
-        let dataTask = URLSession.shared.dataTask(with: url) {(data, response, error) in
+        let request = URLRequest(url: url)
+    
+        NetworkHelper.shared.performDataTask(with: request) { (result) in
             
-            //check for errors
-            if let error = error {// if error is nil there was no network error
-                completion(.failure(.networkClientError(error)))
-            }
-            
-            guard let urlResponse = response as? HTTPURLResponse else {
-                completion(.failure(.noResponse))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
-            }
-            switch urlResponse.statusCode {
-            case 200...299:
-                break
-            default:
-                completion(.failure(.badStatus(urlResponse.statusCode)))
-            }
-            
-            //use data to create Joke Model
-            
-            do {
-                let mushroom = try JSONDecoder().decode([MushroomDataLoad].self, from: data)
+            switch result{
+            case .failure(let appError):
+                completion(.failure(.networkClientError(appError)))
+            case .success(let data):
+                dump(data)
+                do {
+                    let mushroomData = try JSONDecoder().decode([MushroomDataLoad].self, from: data)
+                    
+                    completion(.success(mushroomData))
+                }
+                catch {
+                    completion(.failure(.decodingError(error)))
+                }
                 
-                completion(.success(mushroom))
-            } catch {
-                completion(.failure(.decodingError(error)))
+                
             }
         }
-        dataTask.resume()
-    }
-    
+}
 }
