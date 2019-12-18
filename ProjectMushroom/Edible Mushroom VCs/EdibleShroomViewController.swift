@@ -14,7 +14,9 @@ class EdibleShroomViewController: UIViewController {
     
     var mushroom = [MushroomDataLoad]() {
         didSet {
-            edibleTableView.reloadData()
+            DispatchQueue.main.async {
+                self.edibleTableView.reloadData()
+            }
         }
     }
     
@@ -28,6 +30,16 @@ class EdibleShroomViewController: UIViewController {
     
     
     func loadMushroomData() {
+        
+        ShroomsAPIClient.fetchData { (result) in
+            
+            switch result {
+            case .failure(let appError):
+                print("appError: \(appError)")
+            case .success(let mushroomData):
+                self.mushroom = mushroomData
+            }
+        }
         
     }
     
@@ -48,6 +60,8 @@ extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegat
         
         let selectedShroom = mushroom[indexPath.row]
         
+        //image nested in data
+        //api client -> network
         cell.configureCell(for: selectedShroom)
         
         return cell
