@@ -67,10 +67,13 @@ extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegat
         }
         
         let selectedShroom = mushroom[indexPath.row]
-        print(selectedShroom.latin)
+        
         //image nested in data
         //api client -> network
         
+        if indexPath.section % 2 == 1{
+            cell.backgroundColor = UIColor(displayP3Red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+        }
         
         
         cell.configureCell(for: selectedShroom, chosenMushroom: selectedShroom.latin)
