@@ -12,6 +12,9 @@ class EdibleShroomViewController: UIViewController {
 
     @IBOutlet weak var edibleTableView: UITableView!
     
+    @IBOutlet weak var edibleSearchBar: UISearchBar!
+    
+    
     var mushroom = [MushroomDataLoad]() {
         didSet {
             DispatchQueue.main.async {
@@ -43,6 +46,10 @@ class EdibleShroomViewController: UIViewController {
         
     }
     
+    
+    func colorLoad() {
+        
+    }
 
 }
 

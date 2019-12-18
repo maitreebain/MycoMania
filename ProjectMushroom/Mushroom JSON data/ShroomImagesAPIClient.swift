@@ -10,17 +10,15 @@ import UIKit
 
 struct ShroomImagesAPIClient {
     
-    static func fetchImage(for imageName: String, completion: @escaping (Result<UIImage, AppError>) -> ()) {
+    static func fetchImage(for imageName: String, completion: @escaping (Result<[Images], AppError>) -> ()) {
         
-        let endpointString = "https://pixabay.com/api/?key=0&q=roses&image_type=photo&pretty=true"
+        let endpointString = "https://pixabay.com/api/?key=\(SecretKey.appKey)&q=\(imageName)&image_type=photo&pretty=true"
         
         guard let url = URL(string: endpointString) else {
             completion(.failure(.badURL(endpointString)))
             return
         }
         
-        
-        //"https://pixabay.com/images/search/field%20mushroom/"
         
         let request = URLRequest(url: url)
         
@@ -32,11 +30,14 @@ struct ShroomImagesAPIClient {
             case .success(let data):
                 
                 do {
-//                    let images = JSONDecoder().decode(.self, from: data)
+                    let imagesData = try JSONDecoder().decode(ImageDataLoad.self, from: data)
                     
+                    let image = imagesData.hits
+                    
+                    completion(.success(image))
                 }
                 catch{
-                    
+                    completion(.failure(.decodingError(error)))
                 }
             }
             

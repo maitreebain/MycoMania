@@ -97,6 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="xbh-ro-gdF"/>
                     <connections>
+                        <outlet property="edibleSearchBar" destination="b76-hJ-DDb" id="RhO-9v-aYo"/>
                         <outlet property="edibleTableView" destination="CtY-jg-ed0" id="Olm-Sb-7l4"/>
                     </connections>
                 </viewController>

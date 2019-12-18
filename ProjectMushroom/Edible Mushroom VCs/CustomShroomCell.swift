@@ -19,7 +19,7 @@ class EdibleCell: UITableViewCell {
     @IBOutlet weak var fairyRingLabel: UILabel!
     
     
-    func configureCell(for mushroom: MushroomDataLoad) {
+    func configureCell(for mushroom: MushroomDataLoad, for image: ImageDataLoad) {
         
         nameLabel.text = mushroom.common.last?.description
         latinNameLabel.text = mushroom.latin
@@ -27,5 +27,7 @@ class EdibleCell: UITableViewCell {
         if mushroom.fairyRings == true {
             fairyRingLabel.text = "Fairyring Status: Present"
         }
+        
+        mushroomTNImage.getImage(for: image., completion: <#T##(Result<UIImage, AppError>) -> ()#>)
     }
 }
