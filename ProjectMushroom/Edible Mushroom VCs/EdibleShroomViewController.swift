@@ -23,6 +23,7 @@ class EdibleShroomViewController: UIViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,11 +67,15 @@ extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegat
         }
         
         let selectedShroom = mushroom[indexPath.row]
-        
+        print(selectedShroom.latin)
         //image nested in data
         //api client -> network
-        cell.configureCell(for: selectedShroom)
         
+        
+        
+        cell.configureCell(for: selectedShroom, chosenMushroom: selectedShroom.latin)
+        // configure cell have your function accept the name of the current mushroom
+        // use the 
         return cell
     }
     

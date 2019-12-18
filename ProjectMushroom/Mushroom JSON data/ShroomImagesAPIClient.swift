@@ -10,9 +10,10 @@ import UIKit
 
 struct ShroomImagesAPIClient {
     
-    static func fetchImage(for imageName: String, completion: @escaping (Result<[Images], AppError>) -> ()) {
-        
+    static func fetchImage(for imageName: String, completion: @escaping (Result<Image, AppError>) -> ()) {
+        let imageName = imageName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let endpointString = "https://pixabay.com/api/?key=\(SecretKey.appKey)&q=\(imageName)&image_type=photo&pretty=true"
+
         
         guard let url = URL(string: endpointString) else {
             completion(.failure(.badURL(endpointString)))
@@ -31,8 +32,10 @@ struct ShroomImagesAPIClient {
                 
                 do {
                     let imagesData = try JSONDecoder().decode(ImageDataLoad.self, from: data)
-                    
-                    let image = imagesData.hits
+                    guard let image = imagesData.hits.first else {
+                        completion(.failure(.noData))
+                        return
+                    }
                     
                     completion(.success(image))
                 }

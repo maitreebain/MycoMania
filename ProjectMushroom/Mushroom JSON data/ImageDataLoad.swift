@@ -9,9 +9,9 @@
 import Foundation
 
 struct ImageDataLoad: Decodable {
-    let hits: [Images]
+    let hits: [Image]
 }
 
-struct Images: Decodable {
-    let largeImageUrl: String
+struct Image: Decodable {
+    let largeImageURL: String
 }

@@ -18,8 +18,10 @@ class EdibleCell: UITableViewCell {
     
     @IBOutlet weak var fairyRingLabel: UILabel!
     
+    var shroomImage: Image?
     
-    func configureCell(for mushroom: MushroomDataLoad, for image: ImageDataLoad) {
+    
+    func configureCell(for mushroom: MushroomDataLoad, chosenMushroom: String) {
         
         nameLabel.text = mushroom.common.last?.description
         latinNameLabel.text = mushroom.latin
@@ -28,6 +30,42 @@ class EdibleCell: UITableViewCell {
             fairyRingLabel.text = "Fairyring Status: Present"
         }
         
-        mushroomTNImage.getImage(for: image., completion: <#T##(Result<UIImage, AppError>) -> ()#>)
+        
+        ShroomImagesAPIClient.fetchImage(for: chosenMushroom) { (result) in
+            
+            switch result {
+            case .failure(let appError):
+                print("no image displayed: \(appError)")
+                DispatchQueue.main.async {
+                    self.mushroomTNImage.image = UIImage(systemName: "xmark")
+                }
+            case .success(let image):
+                self.shroomImage = image
+                
+                guard let imageURL = self.shroomImage?.largeImageURL else {
+                    // TODO: default image
+                    DispatchQueue.main.async {
+                        self.mushroomTNImage.image = UIImage(systemName: "xmark")
+                    }
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                self.mushroomTNImage.getImage(for: imageURL) { (result) in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let image):
+                        DispatchQueue.main.async {
+                            self.mushroomTNImage.image = image
+                        }
+                    }
+                }
+                }
+                
+            }
+        }
+        
+        
     }
 }
