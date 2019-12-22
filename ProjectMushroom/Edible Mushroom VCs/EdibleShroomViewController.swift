@@ -71,9 +71,10 @@ extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegat
         //image nested in data
         //api client -> network
         
-//        if indexPath.section % 2 == 1{
-//            cell.backgroundColor = UIColor(displayP3Red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
-//        }
+        if indexPath.row % 2 == 1{
+            cell.backgroundColor = UIColor(displayP3Red: 48/255, green: 70/255, blue: 53/255, alpha: 0.8)
+            
+        }
         
         
         cell.configureCell(for: selectedShroom, chosenMushroom: selectedShroom.latin)
