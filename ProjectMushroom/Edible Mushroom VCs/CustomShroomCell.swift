@@ -58,7 +58,6 @@ class EdibleCell: UITableViewCell {
                 self.shroomImage = image
                 
                 guard let imageURL = self.shroomImage?.largeImageURL else {
-                    // TODO: default image
                     DispatchQueue.main.async {
                         self.mushroomTNImage.image = UIImage(systemName: "o.circle")
                     }
@@ -73,6 +72,7 @@ class EdibleCell: UITableViewCell {
                     case .success(let image):
                         DispatchQueue.main.async {
                             self.mushroomTNImage.image = image
+                            
                         }
                     }
                 }

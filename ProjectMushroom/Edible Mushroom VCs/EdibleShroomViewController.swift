@@ -24,7 +24,6 @@ class EdibleShroomViewController: UIViewController {
     }
 
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +47,7 @@ class EdibleShroomViewController: UIViewController {
         
     }
     
+    
 
 }
 
@@ -68,16 +68,17 @@ extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegat
         //image nested in data
         //api client -> network
         
-        if indexPath.row % 5 == 1{
+        if indexPath.row % 2 == 0{
             cell.backgroundColor = UIColor(displayP3Red: 48/255, green: 70/255, blue: 53/255, alpha: 0.8)
-            
+        } else if indexPath.row % 2 == 1 {
+        cell.backgroundColor = UIColor(displayP3Red: 72/255, green: 34/255, blue: 28/255, alpha: 0.8)
         }
+        
         
         if selectedShroom.attributes.deadly == false && selectedShroom.attributes.poisonous == false && selectedShroom.attributes.psychoactive == false{
         
         cell.configureCell(for: selectedShroom, chosenMushroom: selectedShroom.latin)
         }
-        
         // configure cell have your function accept the name of the current mushroom
         // use the 
         return cell
