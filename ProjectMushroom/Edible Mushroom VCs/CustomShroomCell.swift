@@ -20,6 +20,7 @@ class EdibleCell: UITableViewCell {
     
     var shroomImage: Image?
     
+    var defaultMushroom = "https://vignette.wikia.nocookie.net/nintendo/images/5/5b/Mushroom1.jpg/revision/latest?cb=20111104224030&path-prefix=en"
     
     func configureCell(for mushroom: MushroomDataLoad, chosenMushroom: String) {
         
@@ -37,7 +38,21 @@ class EdibleCell: UITableViewCell {
             case .failure(let appError):
                 print("no image displayed: \(appError)")
                 DispatchQueue.main.async {
-                    self.mushroomTNImage.image = UIImage(systemName: "xmark")
+                    self.mushroomTNImage.getImage(for: self.defaultMushroom) { (result) in
+                        
+                        switch result{
+                        case .failure(let appError):
+                            print("default pic not shown: \(appError)")
+                            DispatchQueue.main.async {
+                                self.mushroomTNImage.image = UIImage(systemName: "star.fill")
+                            }
+                        case .success(let defaultImage):
+                            DispatchQueue.main.async {
+                                self.mushroomTNImage.image = defaultImage
+                            }
+                            
+                        }
+                    }
                 }
             case .success(let image):
                 self.shroomImage = image
@@ -45,7 +60,7 @@ class EdibleCell: UITableViewCell {
                 guard let imageURL = self.shroomImage?.largeImageURL else {
                     // TODO: default image
                     DispatchQueue.main.async {
-                        self.mushroomTNImage.image = UIImage(systemName: "xmark")
+                        self.mushroomTNImage.image = UIImage(systemName: "o.circle")
                     }
                     return
                 }
