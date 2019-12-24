@@ -28,6 +28,8 @@ class EdibleDetailController: UIViewController {
     
     func updateUI() {
         
+        var counter = 0
+        
         guard let mushroomInfo = mushroom else {
             print("no mushroomInfo found")
             return
@@ -35,9 +37,20 @@ class EdibleDetailController: UIViewController {
         
         detailTextView.text = mushroomInfo.habitat
         
+        //mushroomInfo.common.first ?
+        
         for info in mushroomInfo.common {
+            if info == mushroomInfo.common.first{
             commonNameLabel.text = "Common names: \n\(info)"
+            print(info)
+            counter += 1
+            }
+            if counter > 1 {
+                commonNameLabel.text = "\n\(info)"
+                print(info)
+            }
             print(mushroomInfo.common)
+            print(info)
         }
         for regions in mushroomInfo.regions{
         regionsLabel.text = "Found in regions: \n\(regions)"
