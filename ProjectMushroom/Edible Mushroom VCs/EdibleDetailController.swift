@@ -23,9 +23,24 @@ class EdibleDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateUI()
     }
     
     func updateUI() {
         
+        guard let mushroomInfo = mushroom else {
+            print("no mushroomInfo found")
+            return
+        }
+        
+        detailTextView.text = mushroomInfo.habitat
+        
+        for info in mushroomInfo.common {
+            commonNameLabel.text = "Common names: \n\(info)"
+            print(mushroomInfo.common)
+        }
+        for regions in mushroomInfo.regions{
+        regionsLabel.text = "Found in regions: \n\(regions)"
+        }
     }
 }

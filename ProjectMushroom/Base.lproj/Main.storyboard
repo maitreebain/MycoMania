@@ -121,8 +121,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rH-3t-1x5">
-                                <rect key="frame" x="100" y="745.5" width="42" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rH-3t-1x5">
+                                <rect key="frame" x="20" y="725.5" width="172" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,8 +130,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lsh-lG-ygM">
                                 <rect key="frame" x="20" y="108" width="294" height="269"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVA-vY-gtv">
-                                <rect key="frame" x="242" y="745.5" width="42" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVA-vY-gtv">
+                                <rect key="frame" x="222" y="725.5" width="172" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,18 +139,19 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8rH-3t-1x5" firstAttribute="top" secondItem="GNS-O3-4Q1" secondAttribute="bottom" constant="60" id="5GC-eV-09z"/>
                             <constraint firstItem="Lsh-lG-ygM" firstAttribute="height" secondItem="t3h-bg-epo" secondAttribute="height" multiplier="0.3" id="9Cm-b5-GCW"/>
                             <constraint firstItem="mgW-oT-vUC" firstAttribute="trailing" secondItem="GNS-O3-4Q1" secondAttribute="trailing" constant="20" id="Boj-6v-AWS"/>
+                            <constraint firstItem="8rH-3t-1x5" firstAttribute="top" secondItem="GNS-O3-4Q1" secondAttribute="bottom" constant="40" id="DTO-7P-WY8"/>
                             <constraint firstItem="mgW-oT-vUC" firstAttribute="trailing" secondItem="Lsh-lG-ygM" secondAttribute="trailing" constant="100" id="EOn-eR-9Rk"/>
-                            <constraint firstItem="nVA-vY-gtv" firstAttribute="leading" secondItem="8rH-3t-1x5" secondAttribute="trailing" constant="100" id="Q4q-dt-HxW"/>
-                            <constraint firstItem="nVA-vY-gtv" firstAttribute="top" secondItem="GNS-O3-4Q1" secondAttribute="bottom" constant="60" id="YPg-wH-oDj"/>
-                            <constraint firstItem="mgW-oT-vUC" firstAttribute="trailing" secondItem="nVA-vY-gtv" secondAttribute="trailing" constant="130" id="eFM-qJ-3bk"/>
+                            <constraint firstItem="nVA-vY-gtv" firstAttribute="leading" secondItem="8rH-3t-1x5" secondAttribute="trailing" constant="30" id="HmN-kG-qCf"/>
+                            <constraint firstItem="8rH-3t-1x5" firstAttribute="width" secondItem="nVA-vY-gtv" secondAttribute="width" id="OdT-ar-5l3"/>
+                            <constraint firstItem="nVA-vY-gtv" firstAttribute="top" secondItem="GNS-O3-4Q1" secondAttribute="bottom" constant="40" id="c2l-zh-DFV"/>
+                            <constraint firstItem="8rH-3t-1x5" firstAttribute="leading" secondItem="mgW-oT-vUC" secondAttribute="leading" constant="20" id="eVt-C8-Kkz"/>
                             <constraint firstItem="Lsh-lG-ygM" firstAttribute="top" secondItem="mgW-oT-vUC" secondAttribute="top" constant="20" id="fmL-is-hCD"/>
+                            <constraint firstItem="mgW-oT-vUC" firstAttribute="trailing" secondItem="nVA-vY-gtv" secondAttribute="trailing" constant="20" id="g9F-un-utU"/>
                             <constraint firstItem="GNS-O3-4Q1" firstAttribute="leading" secondItem="mgW-oT-vUC" secondAttribute="leading" constant="100" id="mUZ-Uq-v7X"/>
                             <constraint firstItem="GNS-O3-4Q1" firstAttribute="top" secondItem="Lsh-lG-ygM" secondAttribute="bottom" constant="40" id="otH-4n-5FI"/>
                             <constraint firstItem="GNS-O3-4Q1" firstAttribute="height" secondItem="t3h-bg-epo" secondAttribute="height" multiplier="0.3" id="var-Zm-zyn"/>
-                            <constraint firstItem="8rH-3t-1x5" firstAttribute="leading" secondItem="mgW-oT-vUC" secondAttribute="leading" constant="100" id="wIa-bk-BhX"/>
                             <constraint firstItem="Lsh-lG-ygM" firstAttribute="leading" secondItem="mgW-oT-vUC" secondAttribute="leading" constant="20" id="xGv-dj-7Dh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mgW-oT-vUC"/>
