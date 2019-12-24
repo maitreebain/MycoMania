@@ -55,7 +55,6 @@
                                                 <constraint firstItem="o5J-f0-nIh" firstAttribute="top" secondItem="cBO-BU-ziP" secondAttribute="bottom" constant="8" id="1ci-5F-Ao0"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cBO-BU-ziP" secondAttribute="trailing" constant="20" id="6yf-B9-fPM"/>
                                                 <constraint firstAttribute="bottom" secondItem="OQh-LW-zly" secondAttribute="bottom" constant="8" id="9ab-3D-fcN"/>
-                                                <constraint firstItem="cBO-BU-ziP" firstAttribute="leading" secondItem="OQh-LW-zly" secondAttribute="trailing" constant="8" id="MwP-We-e7l"/>
                                                 <constraint firstItem="OQh-LW-zly" firstAttribute="top" secondItem="K93-r2-ljD" secondAttribute="top" constant="8" id="OCn-GL-mQp"/>
                                                 <constraint firstItem="blF-ar-pQV" firstAttribute="top" secondItem="K93-r2-ljD" secondAttribute="topMargin" constant="8" id="Og2-Xr-KR4"/>
                                                 <constraint firstItem="blF-ar-pQV" firstAttribute="leading" secondItem="OQh-LW-zly" secondAttribute="trailing" constant="8" id="YiJ-pd-K8o"/>
@@ -64,6 +63,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="blF-ar-pQV" secondAttribute="trailing" constant="20" id="b6U-e3-WiJ"/>
                                                 <constraint firstItem="cBO-BU-ziP" firstAttribute="top" secondItem="blF-ar-pQV" secondAttribute="bottom" constant="8" id="e2n-Mm-ek2"/>
                                                 <constraint firstItem="cBO-BU-ziP" firstAttribute="centerY" secondItem="K93-r2-ljD" secondAttribute="centerY" id="fWa-GI-Ep8"/>
+                                                <constraint firstItem="cBO-BU-ziP" firstAttribute="leading" secondItem="OQh-LW-zly" secondAttribute="trailing" constant="8" id="kv7-ZZ-mue"/>
                                                 <constraint firstItem="OQh-LW-zly" firstAttribute="leading" secondItem="K93-r2-ljD" secondAttribute="leading" constant="8" id="nOT-sa-AF7"/>
                                                 <constraint firstItem="o5J-f0-nIh" firstAttribute="leading" secondItem="OQh-LW-zly" secondAttribute="trailing" constant="58" id="sUH-KC-5H0"/>
                                             </constraints>
