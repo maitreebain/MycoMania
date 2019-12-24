@@ -69,15 +69,15 @@ extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegat
         //api client -> network
         
         if indexPath.row % 5 == 0{
-            cell.backgroundColor = UIColor(displayP3Red: 48/255, green: 70/255, blue: 53/255, alpha: 1)
-        } else if indexPath.row % 5 == 2 {
-        cell.backgroundColor = UIColor(displayP3Red: 72/255, green: 34/255, blue: 28/255, alpha: 1)
+            cell.backgroundColor = UIColor(displayP3Red: 48/255, green: 70/255, blue: 53/255, alpha: 0.9)
         } else if indexPath.row % 5 == 1 {
-            cell.backgroundColor = UIColor(displayP3Red: 108/255, green: 144/255, blue: 109/255, alpha: 1)
+            cell.backgroundColor = UIColor(displayP3Red: 108/255, green: 144/255, blue: 109/255, alpha: 0.9)
+        } else if indexPath.row % 5 == 2 {
+            cell.backgroundColor = UIColor(displayP3Red: 72/255, green: 34/255, blue: 28/255, alpha: 0.9)
         } else if indexPath.row % 5 == 3 {
-            cell.backgroundColor = UIColor(displayP3Red: 183/255, green: 157/255, blue: 62/255, alpha: 1)
+            cell.backgroundColor = UIColor(displayP3Red: 183/255, green: 157/255, blue: 62/255, alpha: 0.9)
         } else if indexPath.row % 5 == 4 {
-            cell.backgroundColor = UIColor(displayP3Red: 144/255, green: 183/255, blue: 113/255, alpha: 1)
+            cell.backgroundColor = UIColor(displayP3Red: 144/255, green: 183/255, blue: 113/255, alpha: 0.9)
         }
         
         
