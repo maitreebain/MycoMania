@@ -47,6 +47,15 @@ class EdibleShroomViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailController = segue.destination as? EdibleDetailController,
+            let indexPath = edibleTableView.indexPathForSelectedRow else {
+                fatalError("no segue found")
+        }
+        let shroomSelected = mushroom[indexPath.row]
+        
+        detailController.mushroom = shroomSelected
+    }
     
 
 }

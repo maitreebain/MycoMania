@@ -156,6 +156,12 @@
                         <viewLayoutGuide key="safeArea" id="mgW-oT-vUC"/>
                     </view>
                     <navigationItem key="navigationItem" id="N6A-eX-Ra3"/>
+                    <connections>
+                        <outlet property="commonNameLabel" destination="8rH-3t-1x5" id="xI4-1D-6Gj"/>
+                        <outlet property="detailImage" destination="Lsh-lG-ygM" id="Fgx-Vy-faj"/>
+                        <outlet property="detailTextView" destination="GNS-O3-4Q1" id="2xm-hj-uqK"/>
+                        <outlet property="regionsLabel" destination="nVA-vY-gtv" id="owO-Fb-uL0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upw-GW-VjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
