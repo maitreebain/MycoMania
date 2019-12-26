@@ -38,12 +38,11 @@ class EdibleDetailController: UIViewController {
         
         detailTextView.text = mushroomInfo.habitat
         
+        //maybe use empty string to store values, then add it to text label?
         //mushroomInfo.common.first ?
         for name in mushroomInfo.common {
             commonNameLabel.text = "\(name)"
         }
-
-        
         for regions in mushroomInfo.regions {
             regionsLabel.text = "\(regions)"
         }

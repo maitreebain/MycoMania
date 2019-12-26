@@ -181,6 +181,7 @@
                         <outlet property="commonNameLabel" destination="LRP-es-Q7y" id="Q6V-qX-xHw"/>
                         <outlet property="detailImage" destination="Lsh-lG-ygM" id="Fgx-Vy-faj"/>
                         <outlet property="detailTextView" destination="GNS-O3-4Q1" id="2xm-hj-uqK"/>
+                        <outlet property="regionsLabel" destination="xbE-Uu-RV8" id="eaP-39-UcC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upw-GW-VjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
