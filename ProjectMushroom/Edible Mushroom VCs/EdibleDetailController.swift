@@ -44,8 +44,8 @@ class EdibleDetailController: UIViewController {
         }
 
         
-        for regions in mushroomInfo.regions{
-        regionsLabel.text = "Found in regions: \n\(regions)"
+        for regions in mushroomInfo.regions {
+            regionsLabel.text = "\(regions)"
         }
     }
 }
