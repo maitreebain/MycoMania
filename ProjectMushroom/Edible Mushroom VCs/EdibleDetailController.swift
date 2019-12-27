@@ -14,9 +14,9 @@ class EdibleDetailController: UIViewController {
     
     @IBOutlet weak var detailTextView: UITextView!
     
-    @IBOutlet weak var commonNameLabel: UILabel!
+    @IBOutlet weak var commonNameLabel: UITextView!
     
-    @IBOutlet weak var regionsLabel: UILabel!
+    @IBOutlet weak var regionsLabel: UITextView!
     
     
     
@@ -40,7 +40,12 @@ class EdibleDetailController: UIViewController {
         
         //maybe use empty string to store values, then add it to text label?
         //mushroomInfo.common.first ?
-        commonNameLabel.text = "\(mushroomInfo.common[0])\n\(mushroomInfo.common[1])"
+        for name in mushroomInfo.common{
+            commonNameLabel.text = "\(name)\n"
+        }
+        
+        
+//        commonNameLabel.text = "\(mushroomInfo.common)"
         
         for regions in mushroomInfo.regions {
             regionsLabel.text = "\(regions)"
