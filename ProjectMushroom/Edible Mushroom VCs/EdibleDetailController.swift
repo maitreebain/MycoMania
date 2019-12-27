@@ -19,14 +19,14 @@ class EdibleDetailController: UIViewController {
     @IBOutlet weak var regionsLabel: UITextView!
     
     
-    
-    
     var mushroom: MushroomDataLoad?
+    var image: ImageDataLoad?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         updateUI()
+        
     }
     
     func updateUI() {
@@ -50,5 +50,6 @@ class EdibleDetailController: UIViewController {
         for regions in mushroomInfo.regions {
             regionsLabel.text = "\(regions)"
         }
+        
     }
 }
