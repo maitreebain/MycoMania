@@ -278,6 +278,7 @@
                                                 <constraint firstItem="th3-uA-lsR" firstAttribute="leading" secondItem="vSv-7s-U3Q" secondAttribute="leadingMargin" constant="8" id="ati-1G-jTH"/>
                                                 <constraint firstItem="UbJ-Rh-3wn" firstAttribute="leading" secondItem="th3-uA-lsR" secondAttribute="trailing" constant="8" id="d0j-SD-IWS"/>
                                                 <constraint firstItem="8oJ-40-Nry" firstAttribute="leading" secondItem="vSv-7s-U3Q" secondAttribute="leadingMargin" constant="20" id="e8E-bL-e8w"/>
+                                                <constraint firstItem="UbJ-Rh-3wn" firstAttribute="centerY" secondItem="vSv-7s-U3Q" secondAttribute="centerY" id="qq1-im-IVZ"/>
                                                 <constraint firstItem="8oJ-40-Nry" firstAttribute="top" secondItem="vSv-7s-U3Q" secondAttribute="topMargin" constant="8" id="wgW-kM-gPM"/>
                                                 <constraint firstAttribute="bottom" secondItem="UbJ-Rh-3wn" secondAttribute="bottom" constant="8" id="xyV-CP-DtG"/>
                                             </constraints>
