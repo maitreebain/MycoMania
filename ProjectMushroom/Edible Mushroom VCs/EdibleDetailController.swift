@@ -44,9 +44,6 @@ class EdibleDetailController: UIViewController {
             commonNameLabel.text = "\(name)\n"
         }
         
-        
-//        commonNameLabel.text = "\(mushroomInfo.common)"
-        
         for regions in mushroomInfo.regions {
             regionsLabel.text = "\(regions)"
         }
