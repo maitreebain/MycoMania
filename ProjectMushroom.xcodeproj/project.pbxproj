@@ -24,6 +24,8 @@
 		8040A447238DA5B7002637E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8040A445238DA5B7002637E9 /* Main.storyboard */; };
 		8040A449238DA5BA002637E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8040A448238DA5BA002637E9 /* Assets.xcassets */; };
 		8040A44C238DA5BA002637E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8040A44A238DA5BA002637E9 /* LaunchScreen.storyboard */; };
+		80620DFB23C042EB00EE3843 /* PoisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80620DFA23C042EB00EE3843 /* PoisonViewController.swift */; };
+		80620DFD23C0431100EE3843 /* PoisonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80620DFC23C0431100EE3843 /* PoisonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		8040A448238DA5BA002637E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8040A44B238DA5BA002637E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8040A44D238DA5BA002637E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80620DFA23C042EB00EE3843 /* PoisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonViewController.swift; sourceTree = "<group>"; };
+		80620DFC23C0431100EE3843 /* PoisonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		8040A43E238DA5B7002637E9 /* ProjectMushroom */ = {
 			isa = PBXGroup;
 			children = (
+				80620DF923C042B700EE3843 /* PoisonShroomVCs */,
 				803C772D23AABB5C00EA1E6A /* Secrets */,
 				8040A43F238DA5B7002637E9 /* AppDelegate.swift */,
 				8040A441238DA5B7002637E9 /* SceneDelegate.swift */,
@@ -138,6 +143,15 @@
 				8040A44D238DA5BA002637E9 /* Info.plist */,
 			);
 			path = ProjectMushroom;
+			sourceTree = "<group>";
+		};
+		80620DF923C042B700EE3843 /* PoisonShroomVCs */ = {
+			isa = PBXGroup;
+			children = (
+				80620DFA23C042EB00EE3843 /* PoisonViewController.swift */,
+				80620DFC23C0431100EE3843 /* PoisonCell.swift */,
+			);
+			path = PoisonShroomVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,11 +228,13 @@
 				8040A444238DA5B7002637E9 /* EdibleShroomViewController.swift in Sources */,
 				803FF7E523A97FF200BDEAC7 /* NetworkHelper.swift in Sources */,
 				80015482239B490C00CA4D51 /* MushroomDataLoad.swift in Sources */,
+				80620DFD23C0431100EE3843 /* PoisonCell.swift in Sources */,
 				803FF7E923A9812B00BDEAC7 /* UIViewControllers+Alerts.swift in Sources */,
 				8040A440238DA5B7002637E9 /* AppDelegate.swift in Sources */,
 				80163EE8239B69280088F444 /* EdibleDetailController.swift in Sources */,
 				803FF7E323A97F7A00BDEAC7 /* AppError.swift in Sources */,
 				80163EEA239B6B230088F444 /* CustomShroomCell.swift in Sources */,
+				80620DFB23C042EB00EE3843 /* PoisonViewController.swift in Sources */,
 				803FF7E723A980E000BDEAC7 /* UIImage+Extensions.swift in Sources */,
 				803C772F23AABB7900EA1E6A /* Secrets.swift in Sources */,
 				803C772923AAAA1000EA1E6A /* ImageDataLoad.swift in Sources */,
