@@ -30,6 +30,7 @@ class EdibleShroomViewController: UIViewController {
         loadMushroomData()
         edibleTableView.dataSource = self
         edibleTableView.delegate = self
+        edibleSearchBar.delegate = self
     }
     
     
@@ -45,6 +46,17 @@ class EdibleShroomViewController: UIViewController {
             }
         }
         
+    }
+    
+    var searchQuery = "" {
+        didSet {
+            searchBarQuery()
+        }
+    }
+    
+    
+    func searchBarQuery() {
+        mushroom = mushroom.filter {$0.latin.lowercased().contains(searchQuery.lowercased())}
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -102,4 +114,23 @@ extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160
     }
+}
+
+extension EdibleShroomViewController: UISearchBarDelegate {
+        
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            
+            searchBar.resignFirstResponder()
+        }
+        
+        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            
+            if searchText.count == 0 {
+                loadMushroomData()
+                return
+            }
+            
+            searchQuery = searchText
+        }
+        
 }
