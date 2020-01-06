@@ -27,6 +27,7 @@ class EdibleShroomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemPink
         loadMushroomData()
         edibleTableView.dataSource = self
         edibleTableView.delegate = self
