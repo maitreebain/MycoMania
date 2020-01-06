@@ -27,6 +27,10 @@ class PoisonViewController: UIViewController {
         poisonTableView.delegate = self
     }
     
+    func loadPoisonShroomData() {
+        
+    }
+    
 
 }
 

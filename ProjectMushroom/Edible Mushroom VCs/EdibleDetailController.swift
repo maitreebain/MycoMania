@@ -48,5 +48,13 @@ class EdibleDetailController: UIViewController {
             regionsLabel.text = "\(regions)"
         }
         
+        ShroomImagesAPIClient.fetchImage(for: mushroomInfo.latin) { (result) in
+            
+            switch result {
+            case .failure(let appError):
+                
+            }
+        }
     }
+    
 }

@@ -45,6 +45,8 @@ class EdibleShroomViewController: UIViewController {
             case .success(let mushroomData):
                 self.mushroom = mushroomData
             }
+            
+            
         }
         
     }
