@@ -309,10 +309,10 @@
             </objects>
             <point key="canvasLocation" x="4631.884057971015" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Poison View Controller-->
         <scene sceneID="AxW-8K-6SF">
             <objects>
-                <viewController id="VCg-b8-Xni" sceneMemberID="viewController">
+                <viewController id="VCg-b8-Xni" customClass="PoisonViewController" customModule="ProjectMushroom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aOQ-c3-7E7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,7 +325,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="160" id="N7o-rX-EC9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="poisonCell" rowHeight="160" id="N7o-rX-EC9">
                                         <rect key="frame" x="0.0" y="28" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N7o-rX-EC9" id="7rg-tn-NrK">
@@ -362,6 +362,9 @@
                         <viewLayoutGuide key="safeArea" id="84E-Cj-Lzy"/>
                     </view>
                     <navigationItem key="navigationItem" id="75v-Nq-ZOm"/>
+                    <connections>
+                        <outlet property="poisonTableView" destination="xK2-4K-h2j" id="jK6-kM-vKi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GcN-dM-Jd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
