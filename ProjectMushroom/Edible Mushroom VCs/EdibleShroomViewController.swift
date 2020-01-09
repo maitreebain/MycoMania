@@ -70,6 +70,7 @@ class EdibleShroomViewController: UIViewController {
         let shroomSelected = mushroom[indexPath.row]
         
         detailController.mushroom = shroomSelected
+        detailController.view.backgroundColor = .brown
     }
     
 
