@@ -16,8 +16,6 @@ class EdibleCell: UITableViewCell {
     
     @IBOutlet weak var latinNameLabel: UILabel!
     
-    @IBOutlet weak var fairyRingLabel: UILabel!
-    
     var shroomImage: Image?
     
     var defaultMushroom = "https://vignette.wikia.nocookie.net/nintendo/images/5/5b/Mushroom1.jpg/revision/latest?cb=20111104224030&path-prefix=en"
@@ -27,51 +25,47 @@ class EdibleCell: UITableViewCell {
         nameLabel.text = mushroom.common.last?.description
         latinNameLabel.text = mushroom.latin
         
-        if mushroom.fairyRings == true {
-            fairyRingLabel.text = "Fairyring Status: Present"
-        }
         
-        
-        ShroomImagesAPIClient.fetchImage(for: chosenMushroom) { (result) in
+        ShroomImagesAPIClient.fetchImage(for: chosenMushroom) { [weak self] (result) in
             
             switch result {
             case .failure(let appError):
                 print("no image displayed: \(appError)")
                 DispatchQueue.main.async {
-                    self.mushroomTNImage.getImage(for: self.defaultMushroom) { (result) in
+                    self?.mushroomTNImage.getImage(for: self!.defaultMushroom) { [weak self] (result) in
                         
                         switch result{
                         case .failure(let appError):
                             print("default pic not shown: \(appError)")
                             DispatchQueue.main.async {
-                                self.mushroomTNImage.image = UIImage(systemName: "star.fill")
+                                self?.mushroomTNImage.image = UIImage(systemName: "star.fill")
                             }
                         case .success(let defaultImage):
                             DispatchQueue.main.async {
-                                self.mushroomTNImage.image = defaultImage
+                                self?.mushroomTNImage.image = defaultImage
                             }
                             
                         }
                     }
                 }
             case .success(let image):
-                self.shroomImage = image
+                self?.shroomImage = image
                 
-                guard let imageURL = self.shroomImage?.largeImageURL else {
+                guard let imageURL = self?.shroomImage?.largeImageURL else {
                     DispatchQueue.main.async {
-                        self.mushroomTNImage.image = UIImage(systemName: "o.circle")
+                        self?.mushroomTNImage.image = UIImage(systemName: "o.circle")
                     }
                     return
                 }
                 
                 DispatchQueue.main.async {
-                self.mushroomTNImage.getImage(for: imageURL) { (result) in
+                    self?.mushroomTNImage.getImage(for: imageURL) { [weak self] (result) in
                     switch result {
                     case .failure(let error):
                         print(error)
                     case .success(let image):
                         DispatchQueue.main.async {
-                            self.mushroomTNImage.image = image
+                            self?.mushroomTNImage.image = image
                             
                         }
                     }

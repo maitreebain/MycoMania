@@ -28,7 +28,7 @@ class EdibleDetailController: UIViewController {
         super.viewDidLoad()
 
         updateUI()
-        
+        navigationItem.title = mushroom?.common.last
     }
     
     func updateUI() {
