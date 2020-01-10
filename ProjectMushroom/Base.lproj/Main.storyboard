@@ -227,7 +227,7 @@
                                     <segment title="South A."/>
                                 </segments>
                                 <connections>
-                                    <action selector="continentAction:" destination="HcT-Im-dsZ" eventType="valueChanged" id="p4S-Mr-VdJ"/>
+                                    <action selector="continentAction:" destination="HcT-Im-dsZ" eventType="valueChanged" id="clr-NA-WXC"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -244,8 +244,8 @@
                         <viewLayoutGuide key="safeArea" id="pYm-F0-jdT"/>
                     </view>
                     <connections>
-                        <outlet property="continentSegment" destination="97v-sX-IRY" id="ghp-4n-Y1w"/>
-                        <outlet property="map" destination="1wj-5i-j8F" id="cLZ-RH-sDv"/>
+                        <outlet property="continentSegment" destination="97v-sX-IRY" id="qYj-Ae-gNm"/>
+                        <outlet property="mapView" destination="1wj-5i-j8F" id="9fa-Fo-gLf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZm-dt-ZiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

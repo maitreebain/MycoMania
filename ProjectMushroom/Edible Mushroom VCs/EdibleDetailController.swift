@@ -99,4 +99,14 @@ class EdibleDetailController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let mushroomMaps = segue.destination as? MushroomMaps
+            else {
+            fatalError("did not segue to map")
+        }
+        
+        mushroomMaps.mushroomData = mushroom
+    }
+    
+    
 }
