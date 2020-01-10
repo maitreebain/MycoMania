@@ -90,9 +90,6 @@ extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegat
         
         let selectedShroom = mushroom[indexPath.row]
         
-        //image nested in data
-        //api client -> network
-        
         if indexPath.row % 5 == 0{
             cell.backgroundColor = UIColor(displayP3Red: 48/255, green: 70/255, blue: 53/255, alpha: 0.9)
         } else if indexPath.row % 5 == 1 {
@@ -110,8 +107,7 @@ extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegat
         
         cell.configureCell(for: selectedShroom, chosenMushroom: selectedShroom.latin)
         }
-        // configure cell have your function accept the name of the current mushroom
-        // use the 
+        
         return cell
     }
     
