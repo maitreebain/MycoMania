@@ -205,20 +205,31 @@
             </objects>
             <point key="canvasLocation" x="5430.434782608696" y="-555.13392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Mushroom Maps-->
         <scene sceneID="7Fr-Uh-XUO">
             <objects>
-                <viewController id="HcT-Im-dsZ" sceneMemberID="viewController">
+                <viewController id="HcT-Im-dsZ" customClass="MushroomMaps" customModule="ProjectMushroom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i15-fh-IU8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1wj-5i-j8F">
+                                <rect key="frame" x="20" y="20" width="374" height="768"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1wj-5i-j8F" firstAttribute="leading" secondItem="pYm-F0-jdT" secondAttribute="leading" constant="20" id="cun-J9-xZA"/>
+                            <constraint firstItem="1wj-5i-j8F" firstAttribute="top" secondItem="pYm-F0-jdT" secondAttribute="top" constant="20" id="rFW-xd-KBs"/>
+                            <constraint firstItem="pYm-F0-jdT" firstAttribute="bottom" secondItem="1wj-5i-j8F" secondAttribute="bottom" constant="20" id="vPG-J7-5rW"/>
+                            <constraint firstItem="pYm-F0-jdT" firstAttribute="trailing" secondItem="1wj-5i-j8F" secondAttribute="trailing" constant="20" id="xzr-Pm-FEC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pYm-F0-jdT"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZm-dt-ZiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6300" y="-556"/>
+            <point key="canvasLocation" x="6300.0000000000009" y="-556.47321428571422"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zyn-GU-oF2">
