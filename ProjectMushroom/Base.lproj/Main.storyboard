@@ -214,18 +214,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1wj-5i-j8F">
-                                <rect key="frame" x="20" y="20" width="374" height="768"/>
+                                <rect key="frame" x="20" y="20" width="374" height="718"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="97v-sX-IRY">
+                                <rect key="frame" x="20" y="758" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Asia"/>
+                                    <segment title="Europe"/>
+                                    <segment title="Australia"/>
+                                    <segment title="Africa"/>
+                                    <segment title="North A."/>
+                                    <segment title="South A."/>
+                                </segments>
+                                <connections>
+                                    <action selector="continentAction:" destination="HcT-Im-dsZ" eventType="valueChanged" id="p4S-Mr-VdJ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="1wj-5i-j8F" firstAttribute="leading" secondItem="pYm-F0-jdT" secondAttribute="leading" constant="20" id="cun-J9-xZA"/>
-                            <constraint firstItem="1wj-5i-j8F" firstAttribute="top" secondItem="pYm-F0-jdT" secondAttribute="top" constant="20" id="rFW-xd-KBs"/>
-                            <constraint firstItem="pYm-F0-jdT" firstAttribute="bottom" secondItem="1wj-5i-j8F" secondAttribute="bottom" constant="20" id="vPG-J7-5rW"/>
-                            <constraint firstItem="pYm-F0-jdT" firstAttribute="trailing" secondItem="1wj-5i-j8F" secondAttribute="trailing" constant="20" id="xzr-Pm-FEC"/>
+                            <constraint firstItem="pYm-F0-jdT" firstAttribute="bottom" secondItem="97v-sX-IRY" secondAttribute="bottom" constant="19" id="3aI-24-UWB"/>
+                            <constraint firstItem="97v-sX-IRY" firstAttribute="trailing" secondItem="1wj-5i-j8F" secondAttribute="trailing" id="LF6-xT-mgL"/>
+                            <constraint firstItem="pYm-F0-jdT" firstAttribute="trailing" secondItem="1wj-5i-j8F" secondAttribute="trailing" constant="20" id="W8S-vz-AFr"/>
+                            <constraint firstItem="97v-sX-IRY" firstAttribute="top" secondItem="1wj-5i-j8F" secondAttribute="bottom" constant="20" id="YBj-GB-Dtd"/>
+                            <constraint firstItem="97v-sX-IRY" firstAttribute="leading" secondItem="1wj-5i-j8F" secondAttribute="leading" id="h8t-rl-3tM"/>
+                            <constraint firstItem="1wj-5i-j8F" firstAttribute="leading" secondItem="pYm-F0-jdT" secondAttribute="leading" constant="20" id="lhD-UK-e82"/>
+                            <constraint firstItem="1wj-5i-j8F" firstAttribute="top" secondItem="pYm-F0-jdT" secondAttribute="top" constant="20" id="sko-Jr-lTJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pYm-F0-jdT"/>
                     </view>
+                    <connections>
+                        <outlet property="continentSegment" destination="97v-sX-IRY" id="ghp-4n-Y1w"/>
+                        <outlet property="map" destination="1wj-5i-j8F" id="cLZ-RH-sDv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZm-dt-ZiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
