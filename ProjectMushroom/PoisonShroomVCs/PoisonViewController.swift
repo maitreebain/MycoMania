@@ -28,6 +28,18 @@ class PoisonViewController: UIViewController {
     }
     
     func loadPoisonShroomData() {
+           
+           ShroomsAPIClient.fetchData { (result) in
+               
+               switch result {
+               case .failure(let appError):
+                   print("appError: \(appError)")
+               case .success(let mushroomData):
+                   self.mushroom = mushroomData
+               }
+               
+               
+           }
         
     }
     
@@ -41,7 +53,7 @@ extension PoisonViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "poisonCell", for: indexPath) as? PoisonCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "poisonCell", for: indexPath) as? EdibleCell else {
             fatalError("poisonCell not conformed")
         }
         

@@ -26,7 +26,6 @@
 		8040A449238DA5BA002637E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8040A448238DA5BA002637E9 /* Assets.xcassets */; };
 		8040A44C238DA5BA002637E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8040A44A238DA5BA002637E9 /* LaunchScreen.storyboard */; };
 		80620DFB23C042EB00EE3843 /* PoisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80620DFA23C042EB00EE3843 /* PoisonViewController.swift */; };
-		80620DFD23C0431100EE3843 /* PoisonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80620DFC23C0431100EE3843 /* PoisonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +50,6 @@
 		8040A44B238DA5BA002637E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8040A44D238DA5BA002637E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80620DFA23C042EB00EE3843 /* PoisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonViewController.swift; sourceTree = "<group>"; };
-		80620DFC23C0431100EE3843 /* PoisonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				80620DFA23C042EB00EE3843 /* PoisonViewController.swift */,
-				80620DFC23C0431100EE3843 /* PoisonCell.swift */,
 			);
 			path = PoisonShroomVCs;
 			sourceTree = "<group>";
@@ -239,7 +236,6 @@
 				8040A444238DA5B7002637E9 /* EdibleShroomViewController.swift in Sources */,
 				803FF7E523A97FF200BDEAC7 /* NetworkHelper.swift in Sources */,
 				80015482239B490C00CA4D51 /* MushroomDataLoad.swift in Sources */,
-				80620DFD23C0431100EE3843 /* PoisonCell.swift in Sources */,
 				803FF7E923A9812B00BDEAC7 /* UIViewControllers+Alerts.swift in Sources */,
 				8040A440238DA5B7002637E9 /* AppDelegate.swift in Sources */,
 				801343EF23C6E3C0000D5535 /* MushroomMaps.swift in Sources */,

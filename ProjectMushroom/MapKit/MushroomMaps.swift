@@ -84,7 +84,7 @@ class MushroomMaps: UIViewController {
     }
     
     var locations: [String: CLLocationCoordinate2D] =
-        ["North America": CLLocationCoordinate2D(latitude: 37.0902, longitude: 95.7129),
+        ["North America": CLLocationCoordinate2D(latitude: 54.5260, longitude: 105.2551),
                                                        "Asia": CLLocationCoordinate2D(latitude: 34.0479, longitude: 100.6197),
                                                        "Europe": CLLocationCoordinate2D(latitude: 54.5260, longitude: 15.2551),
                                                        "Australia": CLLocationCoordinate2D(latitude: 25.2744, longitude: 133.7751),
