@@ -55,23 +55,6 @@ class EdibleDetailController: UIViewController {
             switch result {
             case .failure(let appError):
                 print("no selected shroom pic shown \(appError)")
-                DispatchQueue.main.async {
-                    self.detailImage.getImage(for: self.defaultMushroom) { (result) in
-                        
-                        switch result{
-                        case .failure(let appError):
-                            print("default pic not shown: \(appError)")
-                            DispatchQueue.main.async {
-                                self.detailImage.image = UIImage(systemName: "star.fill")
-                            }
-                        case .success(let defaultImage):
-                            DispatchQueue.main.async {
-                                self.detailImage.image = defaultImage
-                            }
-                            
-                        }
-                    }
-                }
             case .success(let image):
                 self.shroomImage = image
                 

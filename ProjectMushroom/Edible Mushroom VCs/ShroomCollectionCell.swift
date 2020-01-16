@@ -1,14 +1,14 @@
 //
-//  CustomShroomCell.swift
+//  ShroomCollectionCell.swift
 //  ProjectMushroom
 //
-//  Created by Maitree Bain on 12/7/19.
-//  Copyright © 2019 Maitree Bain. All rights reserved.
+//  Created by Maitree Bain on 1/16/20.
+//  Copyright © 2020 Maitree Bain. All rights reserved.
 //
 
 import UIKit
 
-class EdibleCell: UITableViewCell {
+class ShroomCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var mushroomTNImage: UIImageView!
     
@@ -22,9 +22,11 @@ class EdibleCell: UITableViewCell {
     
     func configureCell(for mushroom: MushroomDataLoad, chosenMushroom: String) {
         
-        nameLabel.text = mushroom.common.last?.description
-        latinNameLabel.text = mushroom.latin
-        
+        if  mushroom.attributes.deadly == false && mushroom.attributes.poisonous == false && mushroom.attributes.psychoactive == false{
+            
+            nameLabel.text = mushroom.common.last?.description
+            latinNameLabel.text = mushroom.latin
+        }
         
         ShroomImagesAPIClient.fetchImage(for: chosenMushroom) { [weak self] (result) in
             
@@ -60,16 +62,16 @@ class EdibleCell: UITableViewCell {
                 
                 DispatchQueue.main.async {
                     self?.mushroomTNImage.getImage(for: imageURL) { [weak self] (result) in
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case .success(let image):
-                        DispatchQueue.main.async {
-                            self?.mushroomTNImage.image = image
-                            
+                        switch result {
+                        case .failure(let error):
+                            print(error)
+                        case .success(let image):
+                            DispatchQueue.main.async {
+                                self?.mushroomTNImage.image = image
+                                
+                            }
                         }
                     }
-                }
                 }
                 
             }
@@ -78,3 +80,4 @@ class EdibleCell: UITableViewCell {
         
     }
 }
+

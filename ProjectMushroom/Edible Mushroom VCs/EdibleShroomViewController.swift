@@ -9,8 +9,8 @@
 import UIKit
 
 class EdibleShroomViewController: UIViewController {
-
-    @IBOutlet weak var edibleTableView: UITableView!
+    
+    @IBOutlet weak var shroomCollection: UICollectionView!
     
     @IBOutlet weak var edibleSearchBar: UISearchBar!
     
@@ -18,32 +18,33 @@ class EdibleShroomViewController: UIViewController {
     var mushroom = [MushroomDataLoad]() {
         didSet {
             DispatchQueue.main.async {
-                self.edibleTableView.reloadData()
+                
+                self.shroomCollection.reloadData()
             }
         }
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .brown
         loadMushroomData()
-        edibleTableView.dataSource = self
-        edibleTableView.delegate = self
+        shroomCollection.dataSource = self
+        shroomCollection.delegate = self
         edibleSearchBar.delegate = self
     }
     
     
     func loadMushroomData() {
         
-        ShroomsAPIClient.fetchData { (result) in
+        ShroomsAPIClient.fetchData { [weak self](result) in
             
             switch result {
             case .failure(let appError):
                 print("appError: \(appError)")
             case .success(let mushroomData):
-                self.mushroom = mushroomData
+                self?.mushroom = mushroomData
             }
             
             
@@ -62,75 +63,70 @@ class EdibleShroomViewController: UIViewController {
         mushroom = mushroom.filter {$0.latin.lowercased().contains(searchQuery.lowercased())}
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailController = segue.destination as? EdibleDetailController,
-            let indexPath = edibleTableView.indexPathForSelectedRow else {
-                fatalError("no segue found")
-        }
-        let shroomSelected = mushroom[indexPath.row]
-        
-        detailController.mushroom = shroomSelected
-        detailController.view.backgroundColor = .brown
-    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        guard let detailController = segue.destination as? EdibleDetailController,
+    //            let indexPath = edibleTableView.indexPathForSelectedRow else {
+    //                fatalError("no segue found")
+    //        }
+    //        let shroomSelected = mushroom[indexPath.row]
+    //
+    //        detailController.mushroom = shroomSelected
+    //        detailController.view.backgroundColor = .brown
+    //    }
     
-
+    
 }
 
 
-extension  EdibleShroomViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension  EdibleShroomViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mushroom.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "edibleCell", for: indexPath) as? EdibleCell else {
-            fatalError("check cell name")
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = shroomCollection.dequeueReusableCell(withReuseIdentifier: "edibleShroom", for: indexPath) as? ShroomCollectionCell else {
+            fatalError("does not conform to cell")
         }
         
         let selectedShroom = mushroom[indexPath.row]
         
-        if indexPath.row % 5 == 0{
-            cell.backgroundColor = UIColor(displayP3Red: 48/255, green: 70/255, blue: 53/255, alpha: 0.9)
-        } else if indexPath.row % 5 == 1 {
-            cell.backgroundColor = UIColor(displayP3Red: 108/255, green: 144/255, blue: 109/255, alpha: 0.9)
-        } else if indexPath.row % 5 == 2 {
-            cell.backgroundColor = UIColor(displayP3Red: 72/255, green: 34/255, blue: 28/255, alpha: 0.9)
-        } else if indexPath.row % 5 == 3 {
-            cell.backgroundColor = UIColor(displayP3Red: 183/255, green: 157/255, blue: 62/255, alpha: 0.9)
-        } else if indexPath.row % 5 == 4 {
-            cell.backgroundColor = UIColor(displayP3Red: 144/255, green: 183/255, blue: 113/255, alpha: 0.9)
-        }
-        
-        
-        if selectedShroom.attributes.deadly == false && selectedShroom.attributes.poisonous == false && selectedShroom.attributes.psychoactive == false{
-        
         cell.configureCell(for: selectedShroom, chosenMushroom: selectedShroom.latin)
-        }
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
-    }
 }
 
+extension  EdibleShroomViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let interItemSpacing: CGFloat = 4
+        let maxWidth = UIScreen.main.bounds.size.width
+        let numberOfItems: CGFloat = 2
+        let totalSpacing: CGFloat = numberOfItems * interItemSpacing
+        let itemWidth: CGFloat = (maxWidth - totalSpacing) / numberOfItems
+        
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+    
+    
+    
+}
+
+
 extension EdibleShroomViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            
-            searchBar.resignFirstResponder()
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.count == 0 {
+            loadMushroomData()
+            return
         }
         
-        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            
-            if searchText.count == 0 {
-                loadMushroomData()
-                return
-            }
-            
-            searchQuery = searchText
-        }
-        
+        searchQuery = searchText
+    }
+    
 }

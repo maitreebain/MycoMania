@@ -24,11 +24,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shrooms" translatesAutoresizingMaskIntoConstraints="NO" id="8HE-WS-uqf">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shrooms-1" translatesAutoresizingMaskIntoConstraints="NO" id="8HE-WS-uqf">
                                         <rect key="frame" x="-291" y="352" width="996" height="196"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="6Bg-ts-5YS" firstAttribute="top" secondItem="HPc-K6-P60" secondAttribute="top" constant="200" id="1Ai-Gc-TU6"/>
                                     <constraint firstItem="6Bg-ts-5YS" firstAttribute="centerX" secondItem="HPc-K6-P60" secondAttribute="centerX" id="WYY-if-Cij"/>
@@ -56,6 +56,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="shrooms" width="498" height="378"/>
+        <image name="shrooms-1" width="498" height="378"/>
     </resources>
 </document>
