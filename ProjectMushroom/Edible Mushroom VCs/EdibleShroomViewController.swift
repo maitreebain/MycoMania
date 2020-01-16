@@ -46,8 +46,8 @@ class EdibleShroomViewController: UIViewController {
             case .success(let mushroomData):
                 self?.edibleMushrooms = mushroomData.filter {
                     $0.attributes.deadly == false &&
-                        $0.attributes.poisonous == true &&
-                        $0.attributes.psychoactive == true
+                        $0.attributes.poisonous == false &&
+                        $0.attributes.psychoactive == false
                 }
                 
             }
@@ -68,17 +68,17 @@ class EdibleShroomViewController: UIViewController {
         edibleMushrooms = edibleMushrooms.filter {$0.latin.lowercased().contains(searchQuery.lowercased())}
     }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        guard let detailController = segue.destination as? EdibleDetailController,
-    //            let indexPath = edibleTableView.indexPathForSelectedRow else {
-    //                fatalError("no segue found")
-    //        }
-    //        let shroomSelected = mushroom[indexPath.row]
-    //
-    //        detailController.mushroom = shroomSelected
-    //        detailController.view.backgroundColor = .brown
-    //    }
-    
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            guard let detailController = segue.destination as? EdibleDetailController,
+                let indexPath = shroomCollection.indexPathsForSelectedItems?.first else {
+                    fatalError("no segue found")
+            }
+            let shroomSelected = edibleMushrooms[indexPath.row]
+
+            detailController.mushroom = shroomSelected
+            detailController.view.backgroundColor = .brown
+        }
+
     
 }
 
@@ -99,6 +99,9 @@ extension  EdibleShroomViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+
+    
 }
 
 extension  EdibleShroomViewController: UICollectionViewDelegateFlowLayout {
