@@ -19,12 +19,9 @@ class ShroomCollectionCell: UICollectionViewCell {
     var shroomImage: Image?
     
     func configureCell(for mushroom: MushroomDataLoad, chosenMushroom: String) {
-        
-        if  mushroom.attributes.deadly == false && mushroom.attributes.poisonous == false && mushroom.attributes.psychoactive == false{
             
             nameLabel.text = mushroom.common.last?.description
             latinNameLabel.text = mushroom.latin
-        }
         
         ShroomImagesAPIClient.fetchImage(for: chosenMushroom) { [weak self] (result) in
 

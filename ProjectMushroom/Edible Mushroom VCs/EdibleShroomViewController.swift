@@ -15,7 +15,7 @@ class EdibleShroomViewController: UIViewController {
     @IBOutlet weak var edibleSearchBar: UISearchBar!
     
     
-    var mushroom = [MushroomDataLoad]() {
+    var edibleMushrooms = [MushroomDataLoad]() {
         didSet {
             DispatchQueue.main.async {
                 
@@ -44,7 +44,12 @@ class EdibleShroomViewController: UIViewController {
             case .failure(let appError):
                 print("appError: \(appError)")
             case .success(let mushroomData):
-                self?.mushroom = mushroomData
+                self?.edibleMushrooms = mushroomData.filter {
+                    $0.attributes.deadly == false &&
+                        $0.attributes.poisonous == true &&
+                        $0.attributes.psychoactive == true
+                }
+                
             }
             
             
@@ -60,7 +65,7 @@ class EdibleShroomViewController: UIViewController {
     
     
     func searchBarQuery() {
-        mushroom = mushroom.filter {$0.latin.lowercased().contains(searchQuery.lowercased())}
+        edibleMushrooms = edibleMushrooms.filter {$0.latin.lowercased().contains(searchQuery.lowercased())}
     }
     
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,7 +85,7 @@ class EdibleShroomViewController: UIViewController {
 
 extension  EdibleShroomViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mushroom.count
+        return edibleMushrooms.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,7 +93,7 @@ extension  EdibleShroomViewController: UICollectionViewDataSource {
             fatalError("does not conform to cell")
         }
         
-        let selectedShroom = mushroom[indexPath.row]
+        let selectedShroom = edibleMushrooms[indexPath.row]
         
         cell.configureCell(for: selectedShroom, chosenMushroom: selectedShroom.latin)
         

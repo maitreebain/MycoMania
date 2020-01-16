@@ -26,7 +26,18 @@
 		8040A44C238DA5BA002637E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8040A44A238DA5BA002637E9 /* LaunchScreen.storyboard */; };
 		80620DFB23C042EB00EE3843 /* PoisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80620DFA23C042EB00EE3843 /* PoisonViewController.swift */; };
 		808D06B523D0D0AB00F66D7C /* ShroomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D06B423D0D0AB00F66D7C /* ShroomCollectionCell.swift */; };
+		80B61A7523D0EEF600394B3F /* ProjectMushroomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B61A7423D0EEF600394B3F /* ProjectMushroomTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80B61A7723D0EEF600394B3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8040A434238DA5B7002637E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8040A43B238DA5B7002637E9;
+			remoteInfo = ProjectMushroom;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		80015481239B490C00CA4D51 /* MushroomDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomDataLoad.swift; sourceTree = "<group>"; };
@@ -50,10 +61,20 @@
 		8040A44D238DA5BA002637E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80620DFA23C042EB00EE3843 /* PoisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonViewController.swift; sourceTree = "<group>"; };
 		808D06B423D0D0AB00F66D7C /* ShroomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShroomCollectionCell.swift; sourceTree = "<group>"; };
+		80B61A7223D0EEF600394B3F /* ProjectMushroomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectMushroomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B61A7423D0EEF600394B3F /* ProjectMushroomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMushroomTests.swift; sourceTree = "<group>"; };
+		80B61A7623D0EEF600394B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8040A439238DA5B7002637E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B61A6F23D0EEF600394B3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				8040A43E238DA5B7002637E9 /* ProjectMushroom */,
+				80B61A7323D0EEF600394B3F /* ProjectMushroomTests */,
 				8040A43D238DA5B7002637E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				8040A43C238DA5B7002637E9 /* ProjectMushroom.app */,
+				80B61A7223D0EEF600394B3F /* ProjectMushroomTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,6 +185,15 @@
 			path = PoisonShroomVCs;
 			sourceTree = "<group>";
 		};
+		80B61A7323D0EEF600394B3F /* ProjectMushroomTests */ = {
+			isa = PBXGroup;
+			children = (
+				80B61A7423D0EEF600394B3F /* ProjectMushroomTests.swift */,
+				80B61A7623D0EEF600394B3F /* Info.plist */,
+			);
+			path = ProjectMushroomTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +214,24 @@
 			productReference = 8040A43C238DA5B7002637E9 /* ProjectMushroom.app */;
 			productType = "com.apple.product-type.application";
 		};
+		80B61A7123D0EEF600394B3F /* ProjectMushroomTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B61A7B23D0EEF600394B3F /* Build configuration list for PBXNativeTarget "ProjectMushroomTests" */;
+			buildPhases = (
+				80B61A6E23D0EEF600394B3F /* Sources */,
+				80B61A6F23D0EEF600394B3F /* Frameworks */,
+				80B61A7023D0EEF600394B3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80B61A7823D0EEF600394B3F /* PBXTargetDependency */,
+			);
+			name = ProjectMushroomTests;
+			productName = ProjectMushroomTests;
+			productReference = 80B61A7223D0EEF600394B3F /* ProjectMushroomTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,6 +244,10 @@
 				TargetAttributes = {
 					8040A43B238DA5B7002637E9 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					80B61A7123D0EEF600394B3F = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 8040A43B238DA5B7002637E9;
 					};
 				};
 			};
@@ -211,6 +265,7 @@
 			projectRoot = "";
 			targets = (
 				8040A43B238DA5B7002637E9 /* ProjectMushroom */,
+				80B61A7123D0EEF600394B3F /* ProjectMushroomTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +278,13 @@
 				8040A44C238DA5BA002637E9 /* LaunchScreen.storyboard in Resources */,
 				8040A449238DA5BA002637E9 /* Assets.xcassets in Resources */,
 				8040A447238DA5B7002637E9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B61A7023D0EEF600394B3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +314,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80B61A6E23D0EEF600394B3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B61A7523D0EEF600394B3F /* ProjectMushroomTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80B61A7823D0EEF600394B3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8040A43B238DA5B7002637E9 /* ProjectMushroom */;
+			targetProxy = 80B61A7723D0EEF600394B3F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8040A445238DA5B7002637E9 /* Main.storyboard */ = {
@@ -424,6 +502,46 @@
 			};
 			name = Release;
 		};
+		80B61A7923D0EEF600394B3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P547T297G7;
+				INFOPLIST_FILE = ProjectMushroomTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaitreeBain.ProjectMushroomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectMushroom.app/ProjectMushroom";
+			};
+			name = Debug;
+		};
+		80B61A7A23D0EEF600394B3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P547T297G7;
+				INFOPLIST_FILE = ProjectMushroomTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaitreeBain.ProjectMushroomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectMushroom.app/ProjectMushroom";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -441,6 +559,15 @@
 			buildConfigurations = (
 				8040A451238DA5BA002637E9 /* Debug */,
 				8040A452238DA5BA002637E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B61A7B23D0EEF600394B3F /* Build configuration list for PBXNativeTarget "ProjectMushroomTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B61A7923D0EEF600394B3F /* Debug */,
+				80B61A7A23D0EEF600394B3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
