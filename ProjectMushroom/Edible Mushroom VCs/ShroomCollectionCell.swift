@@ -18,8 +18,6 @@ class ShroomCollectionCell: UICollectionViewCell {
     
     var shroomImage: Image?
     
-    var defaultMushroom = "https://vignette.wikia.nocookie.net/nintendo/images/5/5b/Mushroom1.jpg/revision/latest?cb=20111104224030&path-prefix=en"
-    
     func configureCell(for mushroom: MushroomDataLoad, chosenMushroom: String) {
         
         if  mushroom.attributes.deadly == false && mushroom.attributes.poisonous == false && mushroom.attributes.psychoactive == false{
@@ -29,52 +27,32 @@ class ShroomCollectionCell: UICollectionViewCell {
         }
         
         ShroomImagesAPIClient.fetchImage(for: chosenMushroom) { [weak self] (result) in
-            
+
             switch result {
             case .failure(let appError):
                 print("no image displayed: \(appError)")
-                DispatchQueue.main.async {
-                    self?.mushroomTNImage.getImage(for: self!.defaultMushroom) { [weak self] (result) in
-                        
-                        switch result{
-                        case .failure(let appError):
-                            print("default pic not shown: \(appError)")
-                            DispatchQueue.main.async {
-                                self?.mushroomTNImage.image = UIImage(systemName: "star.fill")
-                            }
-                        case .success(let defaultImage):
-                            DispatchQueue.main.async {
-                                self?.mushroomTNImage.image = defaultImage
-                            }
-                            
-                        }
-                    }
-                }
             case .success(let image):
                 self?.shroomImage = image
-                
                 guard let imageURL = self?.shroomImage?.largeImageURL else {
-                    DispatchQueue.main.async {
-                        self?.mushroomTNImage.image = UIImage(systemName: "o.circle")
-                    }
+                    print("large url not found")
                     return
                 }
-                
+
                 DispatchQueue.main.async {
                     self?.mushroomTNImage.getImage(for: imageURL) { [weak self] (result) in
                         switch result {
                         case .failure(let error):
-                            print(error)
+                            print("\(error)")
                         case .success(let image):
                             DispatchQueue.main.async {
                                 self?.mushroomTNImage.image = image
-                                
+
                             }
                         }
                     }
                 }
-                
             }
+
         }
         
         
