@@ -10,15 +10,20 @@ import UIKit
 
 class PoisonViewController: UIViewController {
     
-    var mushroom = [MushroomDataLoad]() {
+    @IBOutlet weak var poisonCollection: UICollectionView!
+    
+    var mushrooms = [MushroomDataLoad]() {
         didSet {
             DispatchQueue.main.async {
+                self.poisonCollection.reloadData()
             }
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
     }
     
@@ -30,7 +35,7 @@ class PoisonViewController: UIViewController {
                case .failure(let appError):
                    print("appError: \(appError)")
                case .success(let mushroomData):
-                   self.mushroom = mushroomData
+                   self.mushrooms = mushroomData
                }
                
                

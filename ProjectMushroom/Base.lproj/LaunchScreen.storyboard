@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shrooms" translatesAutoresizingMaskIntoConstraints="NO" id="MuA-tp-Yfg">
-                                <rect key="frame" x="20" y="331.5" width="374.00000000000011" height="233"/>
+                                <rect key="frame" x="20" y="331.5" width="374" height="233"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MycoMania" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yM3-du-2eF">
                                 <rect key="frame" x="20" y="204" width="374" height="67.5"/>
