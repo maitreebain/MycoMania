@@ -24,7 +24,7 @@ class PoisonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        loadPoisonShroomData()
     }
     
     func loadPoisonShroomData() {
